@@ -1,0 +1,17 @@
+name: Workflow for CD
+
+on:
+  workflow_run:
+    workflows: [Workflow for CI]
+    types:
+      completed
+
+jobs:
+  Using-reusable-cd-workflow:
+    uses: tereza-arta/reusable/.github/workflows/cd-reusable.yaml@main
+    with:
+      path: app-base/back
+      filename: back-deploy.yaml
+    secrets:
+      ssh_priv_key: ${{secrets.PRIV_KEY}}
+      dockerhub_token: ${{secrets.TOKEN}}
