@@ -3,8 +3,7 @@ name: Backend workflow
 env:
   IMAGE_TAG: ${{ github.sha }}
 
-on:
-  push
+on: workflow_dispatch
 
 jobs:
   Push-of-Docker-Image:
