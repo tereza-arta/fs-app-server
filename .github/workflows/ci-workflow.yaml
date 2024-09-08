@@ -1,0 +1,20 @@
+name: Workflow for CI
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  Using-reusable-ci-workflow:
+    uses: tereza-arta/reusable/.github/workflows/ci-reusable.yaml@main
+    with:
+      image: app-server
+      app_component: server
+    secrets:
+      docker_psw: ${{secrets.DOCKER_PASSWORD}}
+        
+      
+
+    
+
+    
