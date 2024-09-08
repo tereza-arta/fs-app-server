@@ -10,6 +10,7 @@ jobs:
   Using-reusable-cd-workflow:
     uses: tereza-arta/reusable/.github/workflows/cd-reusable.yaml@main
     with:
+      image: app-server
       path: app-base/back
       filename: back-deploy.yaml
     secrets:
